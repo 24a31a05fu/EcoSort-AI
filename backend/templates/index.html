@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort AI - Transform Waste into Sustainability</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Identify, segregate, and dispose of waste correctly using AI image classification and sustainability analytics. Earn Green Points and compete in sustainability leaderboards!">
+    <meta name="keywords" content="EcoSort AI, waste classification, recycling, AI waste, sustainability, green points, SDG 12, SDG 11, SDG 13, compost">
+    <meta name="author" content="EcoSort AI Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="EcoSort AI - Transform Waste into Sustainability">
+    <meta property="og:description" content="Use AI image classification to segregate waste correctly and save the environment.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS v4 (Play CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col transition-colors duration-300">
+    
+    <!-- Leaf Micro-animation Backgrounds -->
+    <div class="leaf-bg pointer-events-none fixed inset-0 overflow-hidden z-0 opacity-40 dark:opacity-20">
+        <div class="leaf leaf-1">🍃</div>
+        <div class="leaf leaf-2">🌿</div>
+        <div class="leaf leaf-3">🌱</div>
+    </div>
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-950/70 border-b border-emerald-500/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="p-2 bg-gradient-to-tr from-emerald-500 to-green-600 rounded-xl shadow-md shadow-emerald-500/20 text-white">
+                        <i data-lucide="leaf" class="w-6 h-6 animate-pulse"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold font-outfit tracking-tight bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">EcoSort<span class="text-emerald-500 font-normal">AI</span></span>
+                </div>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-4" aria-label="Main Navigation">
+                    <button id="nav-home" onclick="navigateTo('home')" class="px-3 py-2 rounded-lg text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-500/5 transition-all text-emerald-600 dark:text-emerald-400 bg-emerald-500/10">Home</button>
+                    <button id="nav-classify" onclick="navigateTo('classify')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-500/5 transition-all">Waste AI</button>
+                    <button id="nav-dashboard" onclick="navigateTo('dashboard')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-500/5 transition-all auth-only hidden">Dashboard</button>
+                    <button id="nav-chatbot" onclick="navigateTo('chatbot')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-500/5 transition-all">Eco Chat</button>
+                    <button id="nav-rewards" onclick="navigateTo('rewards')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-500/5 transition-all">Rewards</button>
+                    <button id="nav-about" onclick="navigateTo('about')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-500/5 transition-all">About</button>
+                </nav>
+
+                <!-- Action Controls -->
+                <div class="flex items-center space-x-2">
+                    <!-- Language Selector -->
+                    <div class="relative">
+                        <button onclick="toggleLangDropdown()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-all flex items-center space-x-1" aria-label="Select Language">
+                            <i data-lucide="languages" class="w-5 h-5"></i>
+                            <span id="active-lang" class="text-xs font-semibold uppercase">EN</span>
+                        </button>
+                        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-28 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl z-50">
+                            <button onclick="changeLang('en')" class="w-full text-left px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-t-xl text-sm font-medium">English</button>
+                            <button onclick="changeLang('hi')" class="w-full text-left px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 text-sm font-medium">हिंदी</button>
+                            <button onclick="changeLang('te')" class="w-full text-left px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-b-xl text-sm font-medium">తెలుగు</button>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-all" aria-label="Toggle dark/light mode">
+                        <i id="theme-icon-sun" data-lucide="sun" class="w-5 h-5 hidden"></i>
+                        <i id="theme-icon-moon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <!-- User Account / Auth Section -->
+                    <div id="auth-section">
+                        <button onclick="openAuthModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl shadow-md shadow-emerald-500/15 hover:shadow-lg hover:shadow-emerald-500/25 transition-all">Sign In</button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="p-2 md:hidden text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-all" aria-label="Open main menu">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 pt-2 pb-4 space-y-1">
+            <button onclick="navigateTo('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/5">Home</button>
+            <button onclick="navigateTo('classify'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900">Waste AI</button>
+            <button onclick="navigateTo('dashboard'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900 auth-only hidden">Dashboard</button>
+            <button onclick="navigateTo('chatbot'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900">Eco Chat</button>
+            <button onclick="navigateTo('rewards'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900">Rewards</button>
+            <button onclick="navigateTo('about'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900">About</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+        <div id="page-content" class="fade-in">
+            <!-- Dynamic page views will render here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-950/70 backdrop-blur-md py-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="leaf" class="text-emerald-500 w-5 h-5"></i>
+                <span class="font-outfit font-bold text-lg text-slate-700 dark:text-slate-300">EcoSort AI</span>
+                <span class="text-xs text-slate-400 dark:text-slate-500">© 2026. All Rights Reserved.</span>
+            </div>
+            
+            <div class="flex space-x-6 text-sm text-slate-500 dark:text-slate-400">
+                <a href="#about" onclick="navigateTo('about'); return false;" class="hover:text-emerald-600 transition-colors">SDGs</a>
+                <a href="#classify" onclick="navigateTo('classify'); return false;" class="hover:text-emerald-600 transition-colors">AI Sorter</a>
+                <a href="#rewards" onclick="navigateTo('rewards'); return false;" class="hover:text-emerald-600 transition-colors">Leaderboard</a>
+            </div>
+            
+            <div class="text-xs text-slate-400 dark:text-slate-500">
+                Supporting UN SDGs 11, 12, 13
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="hidden fixed inset-0 bg-slate-950/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative glass-card">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" aria-label="Close modal">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="inline-flex p-3 bg-emerald-500/10 rounded-2xl text-emerald-500 mb-2">
+                    <i data-lucide="lock" class="w-6 h-6"></i>
+                </div>
+                <h3 id="auth-modal-title" class="text-2xl font-bold font-outfit text-slate-800 dark:text-white">Sign In to EcoSort</h3>
+                <p id="auth-modal-desc" class="text-sm text-slate-500 dark:text-slate-400 mt-1">Unlock statistics, history, and rewards!</p>
+            </div>
+
+            <!-- Error message container -->
+            <div id="auth-error" class="hidden mb-4 p-3 bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400 rounded-xl text-sm text-center"></div>
+
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                <div id="username-field-container" class="hidden">
+                    <label for="auth-username" class="block text-xs font-semibold text-slate-500 uppercase mb-1">Username</label>
+                    <input type="text" id="auth-username" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-emerald-500 text-sm transition-colors text-slate-800 dark:text-white">
+                </div>
+                <div>
+                    <label id="email-label" for="auth-email" class="block text-xs font-semibold text-slate-500 uppercase mb-1">Email or Username</label>
+                    <input type="text" id="auth-email" required class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-emerald-500 text-sm transition-colors text-slate-800 dark:text-white">
+                </div>
+                <div>
+                    <label for="auth-password" class="block text-xs font-semibold text-slate-500 uppercase mb-1">Password</label>
+                    <input type="password" id="auth-password" required class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-emerald-500 text-sm transition-colors text-slate-800 dark:text-white">
+                </div>
+                
+                <button type="submit" id="auth-submit-btn" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg shadow-emerald-500/15 hover:shadow-emerald-500/25 transition-all text-sm">Sign In</button>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                <span id="auth-toggle-text">Don't have an account?</span>
+                <button onclick="toggleAuthMode()" class="text-emerald-500 hover:underline font-semibold ml-1 focus:outline-none" id="auth-toggle-btn">Create account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core App JS logic -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

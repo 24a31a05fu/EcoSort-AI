@@ -1,0 +1,211 @@
+{
+    "users": [
+        {
+            "username": "test_user_unique_123",
+            "email": "test@ecosort.org",
+            "password_hash": "pbkdf2:sha256:260000$Ujir75z9jC7nk3eH$3599a76c5f9b2656c7d8dff88b80e5b5cf9b6a843029d6d54304e02a7937cd65",
+            "points": 0,
+            "level": 1,
+            "badges": [],
+            "language": "en",
+            "created_at": "2026-06-04T15:36:00.488467",
+            "id": "6c189756-b60a-48e6-91ca-91878f87ca7e"
+        },
+        {
+            "username": "green_guru",
+            "email": "guru@ecosort.org",
+            "password_hash": "pbkdf2:sha256:260000$oh0vCeWKmbhalffG$fbcb3055054053b2ba2bffe9139a2ffd4c0678bc5003d1da1023a323b39556e0",
+            "points": 780,
+            "level": 8,
+            "badges": [
+                "first_scan",
+                "recycle_5",
+                "points_100",
+                "points_500"
+            ],
+            "language": "en",
+            "created_at": "2026-06-04T15:40:05.597464",
+            "id": "e4474e4e-aa91-4ff0-b9f1-ce176345e177"
+        },
+        {
+            "username": "earth_saver",
+            "email": "saver@eco.net",
+            "password_hash": "pbkdf2:sha256:260000$mzjZtMv5oBg9uXP5$c61f8846f0650843ae549a4362bdca9d0ae2e89bc0918f4f3ef8bdce9570ea1e",
+            "points": 450,
+            "level": 5,
+            "badges": [
+                "first_scan",
+                "recycle_5",
+                "points_100"
+            ],
+            "language": "en",
+            "created_at": "2026-06-04T15:40:06.257055",
+            "id": "ce395a0b-bd00-4d20-b12a-efcd86baf984"
+        },
+        {
+            "username": "recycle_queen",
+            "email": "queen@sort.com",
+            "password_hash": "pbkdf2:sha256:260000$P5o0mR4bckEx6n6U$daf1caa1a5ca8d61720c2492153d799f08c3dca2bfab4ef54d4155be88ec75cc",
+            "points": 320,
+            "level": 4,
+            "badges": [
+                "first_scan",
+                "points_100"
+            ],
+            "language": "en",
+            "created_at": "2026-06-04T15:40:06.790687",
+            "id": "e9b09059-03ec-4c09-aab8-7741f19a3950"
+        },
+        {
+            "username": "eco_warrior",
+            "email": "warrior@nature.org",
+            "password_hash": "pbkdf2:sha256:260000$RtplMAm6JfL3QhOr$b8417f7b97788604499e2a8c908731ea17645f88b7e4cc3d62fe6d37c652d914",
+            "points": 150,
+            "level": 2,
+            "badges": [
+                "first_scan",
+                "points_100"
+            ],
+            "language": "en",
+            "created_at": "2026-06-04T15:40:07.537336",
+            "id": "b2270c68-9a97-476b-8000-94f76aec8456"
+        },
+        {
+            "username": "carbon_cutter",
+            "email": "cutter@green.co",
+            "password_hash": "pbkdf2:sha256:260000$GwracZsgoIwKW4KZ$4e1457db93645710ddad542cdf8eb822fcde09ad90a6a8e8c40f29fb2435f048",
+            "points": 90,
+            "level": 1,
+            "badges": [
+                "first_scan"
+            ],
+            "language": "en",
+            "created_at": "2026-06-04T15:40:07.959166",
+            "id": "09587072-35b0-4bb8-92e5-e1864aa5f32b"
+        },
+        {
+            "username": "SHYAM",
+            "email": "shyamrocky20@gmail.com",
+            "password_hash": "pbkdf2:sha256:260000$OWfVuYU45M6OfzhC$0ac4346b31ec51a5eb267ebf2b8057f74ce64b9413610e090925093f2e6f476b",
+            "points": 75,
+            "level": 1,
+            "badges": [
+                "first_scan",
+                "hazardous_safe"
+            ],
+            "language": "en",
+            "created_at": "2026-06-04T16:22:51.220901",
+            "id": "d3177511-f901-41ba-925d-b008dd58b36f"
+        },
+        {
+            "username": "test_user_react",
+            "email": "test_user_react@ecosort.org",
+            "password_hash": "pbkdf2:sha256:260000$awzcdR7e1duupahv$381f8e48f299e38f236ca4f64aafb064532d6fb6717065c6405f764ff6bab091",
+            "points": 0,
+            "level": 1,
+            "badges": [],
+            "language": "en",
+            "created_at": "2026-06-04T16:42:18.262835",
+            "id": "79e9085b-fa9e-44e2-ad9a-0f530a7637eb"
+        }
+    ],
+    "logs": [
+        {
+            "id": "dd79ebd1-2f7c-4254-b92c-92520ddbadad",
+            "user_id": "d3177511-f901-41ba-925d-b008dd58b36f",
+            "item_name": "Wooden Spoon",
+            "category": "Dry Waste",
+            "confidence": 0.05,
+            "carbon_saved": 0.1,
+            "points_earned": 5,
+            "timestamp": "2026-06-04T16:23:30.625159"
+        },
+        {
+            "id": "79e6f3cf-4184-41cf-b5ab-86ad9e69d961",
+            "user_id": "d3177511-f901-41ba-925d-b008dd58b36f",
+            "item_name": "Umbrella",
+            "category": "Dry Waste",
+            "confidence": 0.38,
+            "carbon_saved": 0.1,
+            "points_earned": 5,
+            "timestamp": "2026-06-04T16:32:13.809131"
+        },
+        {
+            "id": "2ebfc647-dd17-45f6-b72d-b77656d6a0cd",
+            "user_id": "d3177511-f901-41ba-925d-b008dd58b36f",
+            "item_name": "Overflowing Trash Ca",
+            "category": "Recyclable Waste",
+            "confidence": 0.9,
+            "carbon_saved": 0.8,
+            "points_earned": 15,
+            "timestamp": "2026-06-04T16:33:11.638440"
+        },
+        {
+            "id": "2ded8fc8-1a82-46d3-9800-3555246421c5",
+            "user_id": "d3177511-f901-41ba-925d-b008dd58b36f",
+            "item_name": "Overflowing Trash Ca",
+            "category": "Recyclable Waste",
+            "confidence": 0.9,
+            "carbon_saved": 0.8,
+            "points_earned": 15,
+            "timestamp": "2026-06-04T16:33:18.647191"
+        },
+        {
+            "id": "478b3510-b9e3-4f9b-ae74-9a8a5a53ed3f",
+            "user_id": "d3177511-f901-41ba-925d-b008dd58b36f",
+            "item_name": "Plate",
+            "category": "Recyclable Waste",
+            "confidence": 0.26,
+            "carbon_saved": 0.8,
+            "points_earned": 15,
+            "timestamp": "2026-06-20T07:32:11.980390"
+        },
+        {
+            "id": "32ffcd83-f66e-40e5-8fca-5e58b50424ed",
+            "user_id": "d3177511-f901-41ba-925d-b008dd58b36f",
+            "item_name": "Paintbrush",
+            "category": "Hazardous Waste",
+            "confidence": 0.03,
+            "carbon_saved": 0.5,
+            "points_earned": 20,
+            "timestamp": "2026-06-20T07:33:38.556644"
+        }
+    ],
+    "badges": [
+        {
+            "id": "first_scan",
+            "title": "Eco Novice",
+            "description": "Scan your first waste item",
+            "icon": "\ud83c\udf31",
+            "points": 10
+        },
+        {
+            "id": "recycle_5",
+            "title": "Sort Master",
+            "description": "Correctly classify 5 recyclable items",
+            "icon": "\u267b\ufe0f",
+            "points": 50
+        },
+        {
+            "id": "hazardous_safe",
+            "title": "Safety First",
+            "description": "Properly dispose of a hazardous item",
+            "icon": "\u26a0\ufe0f",
+            "points": 30
+        },
+        {
+            "id": "points_100",
+            "title": "Green Warrior",
+            "description": "Accumulate 100 green points",
+            "icon": "\ud83d\udee1\ufe0f",
+            "points": 100
+        },
+        {
+            "id": "points_500",
+            "title": "Eco Champion",
+            "description": "Accumulate 500 green points",
+            "icon": "\ud83d\udc51",
+            "points": 500
+        }
+    ]
+}
